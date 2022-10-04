@@ -1,0 +1,28 @@
+#Ejemplos de Herencia propios
+# Ejemplo Herencia
+class Persona: 
+
+    def __init__(self):
+        self.nombre=input("Ingrese el nombre:")
+        self.edad=int(input("Ingrese la edad:"))
+
+    def imprimir(self):
+        print("Nombre:",self.nombre)
+        print("Edad:",self.edad)
+
+#Ejemplo de Herencia Multiple
+class Adulto(Persona): 
+
+    def __init__(self):
+        super().__init__() 
+        self.identificacion=input("¿Es mayor de edad?: ")
+
+    def mayor_edad (self): 
+        if self.identificacion=="si":
+            print("La persona es mayor de edad")
+        else:
+            print("La persona es un niño")
+
+persona1 = Adulto()
+persona1.imprimir()
+persona1.mayor_edad()
