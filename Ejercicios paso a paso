@@ -1,0 +1,120 @@
+#Ejercicios paso a paso propios
+'''
+class Persona:
+   yo = "Luisa"
+persona1 = Persona()
+print(persona1.yo)
+
+class Persona2:
+    def __init__(self, nombre_dueño, edad_dueño):
+        self.nombre = nombre_dueño
+        self.edad = edad_dueño
+    def imprimir(self):
+        print("Yo soy", self.nombre, ",tengo", self.edad, "años")
+dueño1=Persona2("Luisa", 16)
+dueño1.imprimir()
+#------------------------------------------------------------------------
+del dueño1.edad
+dueño1.edad = 18
+print("mi edad es", dueño1.edad)
+del dueño1
+print(dueño1)
+#-----------------------------------------------------------------------
+class Mascotas:
+   def __init__(self, nombre, edad, especie):
+     self.nombre = nombre
+     self.edad = edad
+     self.especie = especie
+mascota0= Mascotas("Arya", 5, "Perro")
+mascota1= Mascotas("Nacho", 2.5, "Gato")
+mascota2= Mascotas("Lennon", 1, "Gato")
+mascota3= Mascotas("Mono", 0.2, "Gato")
+mascota4= Mascotas("Molly", 5, "Perro")
+
+print("La primer mascota se llama ", mascota0.nombre, "tiene ", mascota0.edad,"años ", "y es un", mascota0.especie)
+print("La segunda mascota se llama ", mascota1.nombre, "tiene ", mascota1.edad,"años ", "y es un", mascota1.especie)
+print("La tercera mascota se llama ", mascota2.nombre, "tiene ", mascota2.edad,"años ", "y es un", mascota2.especie)
+print("La cuarta mascota se llama ", mascota3.nombre, "tiene ", mascota3.edad,"años ", "y es un", mascota3.especie)
+print("La quinta mascota se llama ", mascota4.nombre, "tiene ", mascota4.edad,"años ", "y es un", mascota4.especie)
+#-------------------------------------------------------------------
+class Carrera:
+    def __init__(self, ncarrera, facarrera):
+        self.nombrecarrera = ncarrera
+        self.facultadcarrera = facarrera
+    def imprimircarrera(self):
+        print(self.nombrecarrera, self.facultadcarrera)
+carrera = Carrera("Ingeniera de sistemas", "," + "ingenieria")
+carrera.imprimircarrera()
+#-------------------------------------------------------------------
+class Datos():
+    def __init__(self, nomestu, apestu):
+        self.nombre_estudiante = nomestu
+        self.apellido_estudiante = apestu
+    def imprimirnombre(self):
+        print(self.nombre_estudiante, self.apellido_estudiante)
+class Estudiante(Datos):
+    def __init__(self, nomestu, apestu):
+        Datos.__init__(self,nomestu, apestu)
+
+x = Estudiante("Luisa", "Velasco")
+x.imprimirnombre()
+#----------------------------------------------------------------
+class Datos():
+    def __init__(self, nomestu, apestu):
+        self.nombre_estudiante = nomestu
+        self.apellido_estudiante = apestu
+    def imprimirnombre(self):
+        print(self.nombre_estudiante, self.apellido_estudiante)
+class Estudiante(Datos):
+    def __init__(self, nomestu, apestu):
+        super().__init__(nomestu, apestu)
+
+x = Estudiante("Luisa", "Velasco")
+x.imprimirnombre()
+#-------------------------------------------------------------------
+class Datos():
+    def __init__(self, nomestu, apestu):
+        self.nombre_estudiante = nomestu
+        self.apellido_estudiante = apestu
+    def imprimirnombre(self):
+        print(self.nombre_estudiante, self.apellido_estudiante)
+class Estudiante(Datos):
+    def __init__(self, nomestu, apestu):
+        super().__init__(nomestu, apestu)
+        self.ingreso= 2021
+
+x = Estudiante("Luisa", "Velasco")
+x.imprimirnombre()
+print(x.ingreso)
+#-----------------------------------------------------------------
+class Datos():
+    def __init__(self, nomestu, apestu):
+        self.nombre_estudiante = nomestu
+        self.apellido_estudiante = apestu
+    def imprimirnombre(self):
+        print(self.nombre_estudiante, self.apellido_estudiante)
+class Estudiante(Datos):
+    def __init__(self, nomestu, apestu, año_ingreso):
+        super().__init__(nomestu, apestu)
+        self.ingreso= año_ingreso
+
+x = Estudiante("Luisa", "Velasco", 2021)
+x.imprimirnombre()
+print(x.ingreso)
+'''
+
+class Datos():
+    def __init__(self, nomestu, apestu):
+        self.nombre_estudiante = nomestu
+        self.apellido_estudiante = apestu
+    def imprimirnombre(self):
+        print(self.nombre_estudiante, self.apellido_estudiante)
+class Estudiante(Datos):
+    def __init__(self, nomestu, apestu, año_ingreso):
+        super().__init__(nomestu, apestu)
+        self.ingreso= año_ingreso
+    def retorno(self):
+        print("El nombre del estudiante es: ", self.nombre_estudiante, self.apellido_estudiante, "ingreso en el año: ", self.ingreso)
+
+x = Estudiante("Luisa", "Velasco", 2021)
+x.retorno()
