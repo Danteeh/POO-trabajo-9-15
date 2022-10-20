@@ -1,0 +1,36 @@
+class Celular:
+
+    def __init__(self, imei, marca, sistema_operativo, memoria)
+        self.imei = imei
+        self.marca = marca
+        self.sistema_operativo = sistema_operativo
+        self.memoria = memoria
+   
+    def encender():
+        print("EL celular está encendido")
+
+    def ejecutar_programa():
+        print ("el programa solicitado se ejecuta")
+
+    def almacenar_archivo():
+        print("el archivo está guardado")
+
+    def cerrar_programa():
+        "el programa se cerró"
+
+mi_celular = Celular(1345678, 'Samsung','android',,'64GB')
+print(mi_celular.sistema_operativo) 
+class Usuario:
+
+    def __init__(self, username, password):
+        self.username = username 
+        self._password = password 
+
+    def set_username(self, username):
+        self.username = username
+
+    def get_username(self):
+        return self.username
+
+usuario1 = Usuario('Estudianteud', 'codigoestudiantil')
+print(usario1.get_username()) 
