@@ -1,0 +1,16 @@
+class Guason:
+    def __init__(self, nombre, frase):
+        self.nombre = nombre
+        self.frase = frase
+
+    def guason_frases(self):
+        return f'{self.nombre} dice {self.frase}'
+
+
+joker = Guason('Joker', 'Siempre hay que tener un as en la manga')
+
+print(joker.guason_frases()) 
+
+joker.frase = 'Aprendí que todo tiene su tiempo y su lugar'
+
+print(joker.guason_frase()) 
