@@ -1,0 +1,100 @@
+class Libro:
+    def __init__(self, titulo, ano, autor):
+        self.titulo = titulo
+        self.ano = ano
+        self.autor = autpr
+        print('Se ha creado el libro:', self.titulo)
+
+    def __str__(self):
+        return '{} ({})'.format(self.titulo, self.autor)
+
+
+class Biblioteca:
+    def __init__(self, libros=[]):
+        self.libros = libros
+
+    def agregar(self, p):
+        self.libros.append(p)
+
+    def mostrar(self):
+        for p in self.libros:
+            print(p) 
+l1 = Libro("Cien anos de soledad", 1967, "Gabriel Garcia Marquez")
+l2 = Libro("La odisea", 1905, "Homero")
+
+l = Biblioteca([l1,l2]) 
+l.mostrar()
+l.agregar(Libro("Don quijote de la mancha", 1905, "Miguel de Cervantes")) 
+l.mostrar()
+
+
+class Inventario:
+    def __init__(self,codigo,nombre,cantidad):
+        self.codigo = codigo
+        self.nombre = nombre
+        self.cantidad = cantidad
+
+    def __str__(self):
+        return 'COD: {}, {}, cantidad en almacen: {}'.format(self.codigo,self.nombre,self.cantidad)
+
+
+class Venta(Inventario):
+    def __init__(self,codigo,nombre,cantidad, unid_ven, precio):
+        Inventario.__init__(self,codigo,nombre,cantidad)
+        self.unid_ven = unid_ven
+        self.precio = precio
+
+    def __str__(self):
+        return Inventario.__str__(self) + ", unid_ven: {} , precio: {}".format(self.unid_ven,self.precio)
+
+class Peliculas(Inventario):
+    def __init__(self,codigo,nombre,publico,precio, genero)
+        Inventario.__init__(self,codigo,nombre,precio, genero)
+        self.publico = publico
+        self.genero = genero
+
+    def __str__(self):
+        return Inventario.__str__(self) + ", Pelicula para publico: {}, es de genero:  {}".format(self.publico, self.genero)
+
+pelicula1 = Pelicula1("001	","El padrino","mayores de 16 anos",35.000, ", drama")
+pelicula2 = Pelicula2("002	","Pulp fiction","mayores de 15 anos",40.000, ", cine policiaco")
+
+print(pelicula1)
+print(pelicula2)
+
+class Peliculas2(Inventario):
+
+    def __init__(self,codigo,nombre,publico,precio, genero):
+        super().__init__(codigo,nombre)
+        self.precio = precio
+        self.publico  publico
+        self.genero = genero
+    def __str__(self):
+        return super().__str__() + ', Pelicula para publico: {}, es de genero:  {}' .format(self.isbn,self.autor)
+print("Pelicula de la clase Pelicula2 utilizando super()")
+peliculas_modernas =Pelicula2("003	","Cruella","todo publico",50.000, "drama"))
+
+print(peliculas_modernas)
+
+class Circulo:
+    def __init__(self,radio, pi):
+        self.pi = pi
+        self.radio = radio
+
+    def area(self):
+        return self.pi* self.radio * self.radio
+
+    def perimetro(self):
+        return 2 * self.pi  * self.radio
+
+class Cilindro(Circulo):
+    def __init__(self,radio):
+        super().__init__(pi)
+
+    def volumen(self):
+        vol = super().radio()
+        return vol* self.pi
+
+cilindro = Cilindro(2)
+
+print("Volumen: {}".format(cilindro.volumen()))
