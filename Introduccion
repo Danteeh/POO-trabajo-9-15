@@ -1,0 +1,39 @@
+class Celular:
+    pass
+
+obj_celular = Celular()
+print(obj_celular)
+print(type(obj_celular))
+
+obj_celular.marca = "samsung"
+obj_celular.sistema_operativo = "android"
+
+print("Mi celular es un {} y tiene un sistema operativo {}".format(obj_celular.marca,obj_carro.sistema_operativo))
+
+class Celular2:
+    marca = ""
+    sistema_operativo = ""
+
+obj_celular2 = Celular2()
+print("Valores de atributos iniciales del objeto. Marca: {}, Sistema_operativo: {}".format(obj_celular2.marca,obj_celular2.sistema_operativo))
+obj_celular2.marca = "Iphone"
+obj_celular2.sistema_operativo = "Ios"
+
+print("Valores de atributos del objeto ahora son. Marca: {}, Sistema_operativo: {}".format(obj_celular2.marca,obj_celular2.sistema_operativo))
+
+class Celular3():
+    marca = ""
+    sistema_operativo =""
+
+    llamar = True
+
+    def llamar(self):
+        self.llamar = True
+
+    def llamar(self):
+        self.llamar= False
+
+obj3 = Celular3()
+print(obj3.celular)
+obj3.celular()
+print(obj3.celular)
